@@ -1,0 +1,22 @@
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: movie
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        enabled: true
+        instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress:${random.value}}
+        serviceName: ${spring.application.name}
+        preferIpAddress: true
+        port: ${server.port}
+  datasource:
+    url: jdbc:mysql://localhost:3306/film_maker?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver

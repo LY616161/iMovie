@@ -11,5 +11,12 @@ public class MovieApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MovieApplication.class, args);
 	}
-
+//	@Bean
+//	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+//		return builder.routes()
+//				.route(t -> t.path("/movie/1")
+//						.and()
+//						.uri("http://localhost:8080/test"))
+//				.build();
+//	}
 }
